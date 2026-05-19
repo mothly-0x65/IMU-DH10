@@ -3,20 +3,63 @@
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="ALL" />
   </component>
-  <component name="CargoProjects">
-    <cargoProject FILE="$PROJECT_DIR$/ADC/ad7768-pac/Cargo.toml">
-      <package file="$PROJECT_DIR$/ADC/ad7768-pac">
-        <feature name="default" enabled="true" />
-      </package>
-    </cargoProject>
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="" />
+    <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/.rustc_info.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/dep-lib-ad7768_pac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/dep-test-lib-ad7768_pac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/dep-lib-ad7768_pac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/dep-test-lib-ad7768_pac" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-450061397bfc1f61.rmeta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-72bbd1f472e0210e.rmeta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/Cargo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/Cargo.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/addr.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/addr.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/registers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/registers.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/test.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/.rustc_info.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/CACHEDIR.TAG" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/CACHEDIR.TAG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.cargo-lock" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.cargo-lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/dep-lib-ad7768_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/invoked.timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/output-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/output-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/dep-test-lib-ad7768_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/invoked.timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/output-test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/output-test-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/dep-lib-ad7768_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/invoked.timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/output-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/output-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/dep-test-lib-ad7768_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/invoked.timestamp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/output-test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/output-test-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-450061397bfc1f61.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-450061397bfc1f61.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-48105b9e1a8df463.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-48105b9e1a8df463.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-72bbd1f472e0210e.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-72bbd1f472e0210e.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-96147620c8ee84f2.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-96147620c8ee84f2.d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-450061397bfc1f61.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-48105b9e1a8df463.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-48105b9e1a8df463.rmeta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-72bbd1f472e0210e.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-96147620c8ee84f2.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-96147620c8ee84f2.rmeta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/incremental/ad7768_pac-3p1u86hn79kv2/s-hil6abn2pc-0xi63sw.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/incremental/ad7768_pac-3p1u86hn79kv2/s-hil6abn2pc-0xi63sw.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="RsBuildProfile:test" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -25,7 +68,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/embassy" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="umOExZbM" />
@@ -41,6 +84,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Cargo.Test test::tests::channel_mode_reg_encode_decode.executor": "Run",
+    "Cargo.Test test::tests::channel_mode_reg_reset_is_sinc5_x1024.executor": "Run",
+    "Cargo.Test test::tests::channel_standby_roundtrip.executor": "Run",
+    "Cargo.Test test::tests::dec_rate_factors.executor": "Run",
+    "Cargo.Test test::tests::power_mode_reg_eco_pairing.executor": "Run",
+    "Cargo.Test test::tests::spi_frame_read.executor": "Run",
+    "Cargo.Test test::tests::spi_frame_write.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -49,9 +99,10 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "adc",
     "junie.onboarding.icon.badge.shown": "true",
-    "last_opened_file_path": "/home/eric/DH10/imu-board",
+    "last_directory_selection": "/home/eric/DH10/imu-board/ADC",
+    "last_opened_file_path": "/home/eric/DH10/imu-board/ADC/ad7768-pac",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -60,15 +111,118 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/ADC" />
+      <recent name="$PROJECT_DIR$/ADC/src" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac/src" />
     </key>
+  </component>
+  <component name="RunManager" selected="Cargo.Test test::tests::power_mode_reg_eco_pairing">
+    <configuration name="Test test::tests::channel_mode_reg_encode_decode" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_mode_reg_encode_decode --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::channel_mode_reg_reset_is_sinc5_x1024" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_mode_reg_reset_is_sinc5_x1024 --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::channel_standby_roundtrip" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_standby_roundtrip --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::power_mode_reg_eco_pairing" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::power_mode_reg_eco_pairing --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::spi_frame_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::spi_frame_read --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Cargo.Test test::tests::power_mode_reg_eco_pairing" />
+        <item itemvalue="Cargo.Test test::tests::channel_mode_reg_reset_is_sinc5_x1024" />
+        <item itemvalue="Cargo.Test test::tests::channel_mode_reg_encode_decode" />
+        <item itemvalue="Cargo.Test test::tests::channel_standby_roundtrip" />
+        <item itemvalue="Cargo.Test test::tests::spi_frame_read" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="RustProjectSettings">
     <option name="toolchainHomeDirectory" value="/usr/bin" />
@@ -82,10 +236,23 @@
       <updated>1778240056629</updated>
       <workItem from="1778240057666" duration="558000" />
       <workItem from="1778917845210" duration="25375000" />
+      <workItem from="1779093518469" duration="15230000" />
+      <workItem from="1779177331157" duration="3255000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/ad7768-pac/src/test.rs</url>
+          <line>94</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

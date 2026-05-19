@@ -3,36 +3,6 @@
 //! Typed register access for the Analog Devices AD7768 (8-channel) and
 //! AD7768-4 (4-channel) simultaneous-sampling sigma-delta ADCs.
 //!
-//! ## Register map summary (SPI control mode)
-//!
-//! | Addr | Name                  | R/W |
-//! |------|-----------------------|-----|
-//! | 0x00 | Channel Standby       | RW  |
-//! | 0x01 | Channel Mode A        | RW  |
-//! | 0x02 | Channel Mode B        | RW  |
-//! | 0x03 | Channel Mode Select   | RW  |
-//! | 0x04 | Power Mode            | RW  |
-//! | 0x05 | General Config        | RW  |
-//! | 0x06 | Data Control          | RW  |
-//! | 0x07 | Interface Config      | RW  |
-//! | 0x08 | BIST Control          | RW  |
-//! | 0x09 | Device Status         | R   |
-//! |b 0x0A | Revision ID           | R   |
-//! | 0x0E | GPIO Control          | RW  |
-//! | 0x0F | GPIO Write Data       | RW  |
-//! | 0x10 | GPIO Read Data        | R   |
-//! | 0x11 | Precharge Buffer 1    | RW  |
-//! | 0x12 | Precharge Buffer 2    | RW  |
-//! | 0x13 | Pos Ref Precharge Buf | RW  |
-//! | 0x14 | Neg Ref Precharge Buf | RW  |
-//! | 0x1E–0x35 | Offset registers | RW  |
-//! | 0x36–0x4D | Gain registers   | RW  |
-//! | 0x4E–0x55 | Sync phase offset| RW  |
-//! | 0x56 | Diagnostic Rx Select  | RW  |
-//! | 0x57 | Diagnostic Mux Ctrl   | RW  |
-//! | 0x58 | Modulator Delay Ctrl  | RW  |
-//! | 0x59 | Chop Control          | RW  |
-//!
 //! ## SPI framing
 //!
 //! Each SPI access is **16 bits**.
@@ -169,6 +139,7 @@ impl From<DecRate> for u8 {
 /// Note: 0b01 is not a valid power mode (reserved).
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 #[repr(u8)]
+
 pub enum PowerMode {
     /// Lowest power: 32 kSPS max, 13.8 kHz BW, ~9.4 mW/ch.
     Eco = 0,
@@ -179,7 +150,7 @@ pub enum PowerMode {
 }
 
 impl PowerMode {
-    /// Return the MCLK divider that pairs with this mode at 32.768 MHz MCLK.
+    /// Return the MCLK divider that pairs with this power mode.
     pub const fn default_mclk_div(self) -> MclkDiv {
         match self {
             PowerMode::Eco => MclkDiv::Div32,
@@ -503,12 +474,12 @@ impl StatusHeader {
     /// Parse an 8-bit header byte.
     pub fn from_byte(b: u8) -> Self {
         Self {
-            chip_error:        b & 0x80 != 0,
+            chip_error:         b & 0x80 != 0,
             filter_not_settled: b & 0x40 != 0,
-            repeated_data:     b & 0x20 != 0,
-            sinc5_filter:      b & 0x10 != 0,
-            filter_saturated:  b & 0x08 != 0,
-            channel_id:        b & 0x07,
+            repeated_data:      b & 0x20 != 0,
+            sinc5_filter:       b & 0x10 != 0,
+            filter_saturated:   b & 0x08 != 0,
+            channel_id:         b & 0x07,
         }
     }
 

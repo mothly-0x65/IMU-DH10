@@ -46,6 +46,9 @@ mod tests {
         let r = ChannelModeReg::default();
         assert_eq!(r.filter_type(), Ok(FilterType::Sinc5));
         assert_eq!(r.dec_rate(), Ok(DecRate::X1024));
+        // raw value: filter = << 3 | dec=5 = 0x0D
+        assert_eq!(u8::from(r), 0x0D);
+        assert_eq!(ChannelModeReg::from(0x0D), r);
     }
 
     #[test]
@@ -68,13 +71,28 @@ mod tests {
 
     #[test]
     fn power_mode_reg_median_pairing() {
-        let r = PowerModeReg::from_power_mode(PowerMode::Median);
+        let mut r = PowerModeReg::from_power_mode(PowerMode::Median);
         assert_eq!(r.power_mode(), Ok(PowerMode::Median));
         assert_eq!(r.mclk_div(), Ok(MclkDiv::Div8));
+        assert_eq!(r.sleep_mode(), false);
         // power=0b10 << 4 | mclk=0b10 = 0x22
         assert_eq!(u8::from(r), 0x22);
+        r = r.set_power_mode(PowerMode::Eco);
+        assert_eq!(u8::from(r), 0x02);
+        r = r.set_mclk_div(MclkDiv::Div32);
+        assert_eq!(u8::from(r), 0x00);
+
     }
 
+    #[test]
+    fn general_config() {
+        let mut r = GeneralConfig::default()
+            .set_retime_enable(true)
+            .set_vcm_power_down(true); //0 0x38
+        assert_eq!(r.retime_enable(), true);
+        assert_eq!(r.vcm_powered_down(), true);
+        assert_eq!(u8::from(r), 0x38);
+    }
     #[test]
     fn interface_config_crc_and_dclk() {
         let r = InterfaceConfig::default()
