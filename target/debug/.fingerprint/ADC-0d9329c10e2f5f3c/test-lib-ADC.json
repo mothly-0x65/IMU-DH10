@@ -1,0 +1,1 @@
+{"rustc":4826714390000139368,"features":"[\"default\"]","declared_features":"[\"default\", \"defmt\"]","target":13341152413795717489,"profile":1722584277633009122,"path":10763286916239946207,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug/.fingerprint/ADC-0d9329c10e2f5f3c/dep-test-lib-ADC","checksum":false}}],"rustflags":[],"config":2069994364910194474,"compile_kind":0}
