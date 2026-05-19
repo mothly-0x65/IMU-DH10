@@ -4,56 +4,7 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/.rustc_info.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/dep-lib-ad7768_pac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/dep-test-lib-ad7768_pac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/dep-lib-ad7768_pac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/dep-test-lib-ad7768_pac" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-450061397bfc1f61.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-72bbd1f472e0210e.rmeta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/Cargo.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/Cargo.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/addr.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/addr.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/registers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/registers.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/test.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/.rustc_info.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/CACHEDIR.TAG" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/CACHEDIR.TAG" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.cargo-lock" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.cargo-lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/dep-lib-ad7768_pac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/invoked.timestamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/lib-ad7768_pac.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/output-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-450061397bfc1f61/output-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/dep-test-lib-ad7768_pac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/invoked.timestamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/output-test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/output-test-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-48105b9e1a8df463/test-lib-ad7768_pac.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/dep-lib-ad7768_pac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/invoked.timestamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/lib-ad7768_pac.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/output-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-72bbd1f472e0210e/output-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/dep-test-lib-ad7768_pac" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/invoked.timestamp" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/invoked.timestamp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/output-test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/output-test-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac.json" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/.fingerprint/ad7768-pac-96147620c8ee84f2/test-lib-ad7768_pac.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-450061397bfc1f61.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-450061397bfc1f61.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-48105b9e1a8df463.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-48105b9e1a8df463.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-72bbd1f472e0210e.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-72bbd1f472e0210e.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/ad7768_pac-96147620c8ee84f2.d" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/ad7768_pac-96147620c8ee84f2.d" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-450061397bfc1f61.rmeta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-48105b9e1a8df463.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-48105b9e1a8df463.rmeta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-72bbd1f472e0210e.rmeta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/deps/libad7768_pac-96147620c8ee84f2.rmeta" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/deps/libad7768_pac-96147620c8ee84f2.rmeta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/target/debug/incremental/ad7768_pac-3p1u86hn79kv2/s-hil6abn2pc-0xi63sw.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/target/debug/incremental/ad7768_pac-3p1u86hn79kv2/s-hil6abn2pc-0xi63sw.lock" afterDir="false" />
-    </list>
+    <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,7 +53,7 @@
     "git-widget-placeholder": "adc",
     "junie.onboarding.icon.badge.shown": "true",
     "last_directory_selection": "/home/eric/DH10/imu-board/ADC",
-    "last_opened_file_path": "/home/eric/DH10/imu-board/ADC/ad7768-pac",
+    "last_opened_file_path": "/home/eric/DH10/imu-board/ad7768-pac",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -118,6 +69,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/ad7768-pac" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -237,7 +189,7 @@
       <workItem from="1778240057666" duration="558000" />
       <workItem from="1778917845210" duration="25375000" />
       <workItem from="1779093518469" duration="15230000" />
-      <workItem from="1779177331157" duration="3255000" />
+      <workItem from="1779177331157" duration="3626000" />
     </task>
     <servers />
   </component>
