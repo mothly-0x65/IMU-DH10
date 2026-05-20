@@ -12,7 +12,13 @@ default = []
 defmt = ["dep:defmt"]
 
 [dependencies]
+ad7768-pac = { path = "ad7768-pac"}
 defmt = { version = "1.1.0", optional = true }
+embassy-stm32 = { version = "0.6.0", features = ["exti"] }
+embassy-time = "0.5.1"
+embedded-hal = "0.2.7"
+embassy-futures = "0.1.2"
+embedded-hal-async = "1.0.0"
 
 [toolchain]
 channel = "nightly"          # Embassy requires nightly for async-fn-in-trait
