@@ -1,0 +1,1 @@
+/Users/tudor/Documents/Hyperloop/IMU/Code/DH10_IMU_Embassy/imu-embassy-project/target/thumbv7em-none-eabihf/release/imu-embassy-project: /Users/tudor/Documents/Hyperloop/IMU/Code/DH10_IMU_Embassy/imu-embassy-project/src/main.rs
