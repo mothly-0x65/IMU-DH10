@@ -4,9 +4,9 @@ version = "0.1.0"
 edition = "2024"
 
 [workspace]
-members = ["../ad7768-pac"]
+members = ["ad7768-pac"]
 [dependencies]
-ad7768-pac    = { path = "../ad7768-pac" }
+ad7768-pac    = { path = "ad7768-pac" }
 defmt         = "1.1.0"
 embassy-stm32     = { version = "0.6.0", features = [
     "stm32h753zi",
