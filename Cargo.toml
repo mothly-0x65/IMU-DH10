@@ -1,42 +1,20 @@
 [package]
-name = "adc_imu" # Change this to your project name
+name = "adc_imu"
 version = "0.1.0"
 edition = "2024"
 
 [workspace]
 members = ["ad7768-pac"]
-
-[features]
-default = []
-# Enable defmt support for debug printing
-defmt = ["dep:defmt"]
-
 [dependencies]
-ad7768-pac = { path = "ad7768-pac"}
-defmt = { version = "1.1.0", optional = true }
-embassy-stm32 = { version = "0.6.0", features = ["exti"] }
-embassy-time = "0.5.1"
-embedded-hal = "0.2.7"
-embassy-futures = "0.1.2"
+ad7768-pac    = { path = "ad7768-pac" }
+defmt         = "1.1.0"
+embassy-stm32     = { version = "0.6.0", features = [
+    "stm32h753zi",
+    "time-driver-any",
+    "memory-x",
+    "exti",
+    "defmt",
+] }
+embassy-time      = "0.4"
+embassy-futures   = "0.1"
 embedded-hal-async = "1.0.0"
-
-[toolchain]
-channel = "nightly"          # Embassy requires nightly for async-fn-in-trait
-targets = ["thumbv7em-none-eabihf"]
-components = ["rust-src", "rustfmt", "clippy"]
-
-[target.thumbv7em-none-eabihf]
-# Flash + debug with probe-rs (install: cargo install probe-rs --features cli)
-runner = "probe-rs run --chip STM32H743ZITx"
-rustflags = [
-    "-C", "link-arg=-Tlink.x",
-    "-C", "link-arg=-Tdefmt.x",
-    "-C", "link-arg=--nmagic",     # disable page alignment (saves flash)
-]
-
-[build]
-target = "thumbv7em-none-eabihf"   # Cortex-M7 with FPU
-
-[env]
-# uncomment and set to probe serial if multiple connected
-# PROBE_RS_PROBE = "0000..."

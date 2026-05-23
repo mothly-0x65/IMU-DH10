@@ -15,13 +15,145 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ad7768-pac/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/Cargo.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ad7768-pac/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ad7768-pac/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/src/lib.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-0d9329c10e2f5f3c/dep-test-lib-ADC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-0d9329c10e2f5f3c/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-0d9329c10e2f5f3c/test-lib-ADC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-0d9329c10e2f5f3c/test-lib-ADC.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-97170f6fff7bf85e/dep-lib-ADC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-97170f6fff7bf85e/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-97170f6fff7bf85e/lib-ADC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-97170f6fff7bf85e/lib-ADC.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/ADC-97170f6fff7bf85e/output-lib-ADC" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-715732703d3ced6f/dep-test-lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-715732703d3ced6f/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-715732703d3ced6f/output-test-lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-715732703d3ced6f/test-lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-715732703d3ced6f/test-lib-adc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-fe42060dca1c13a5/dep-lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-fe42060dca1c13a5/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-fe42060dca1c13a5/lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-fe42060dca1c13a5/lib-adc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc-fe42060dca1c13a5/output-lib-adc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-e31a75a423624693/dep-test-lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-e31a75a423624693/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-e31a75a423624693/output-test-lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-e31a75a423624693/test-lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-e31a75a423624693/test-lib-adc_pac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-f79331ee7714ee3d/dep-lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-f79331ee7714ee3d/invoked.timestamp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-f79331ee7714ee3d/lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-f79331ee7714ee3d/lib-adc_pac.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/.fingerprint/adc_pac-f79331ee7714ee3d/output-lib-adc_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/ADC-0d9329c10e2f5f3c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/ADC-0d9329c10e2f5f3c.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/ADC-97170f6fff7bf85e.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc-715732703d3ced6f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc-715732703d3ced6f.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc-fe42060dca1c13a5.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc_pac-e31a75a423624693" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc_pac-e31a75a423624693.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/adc_pac-f79331ee7714ee3d.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libADC-97170f6fff7bf85e.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libADC-97170f6fff7bf85e.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libadc-fe42060dca1c13a5.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libadc_pac-f79331ee7714ee3d.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/deps/libadc_pac-f79331ee7714ee3d.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p-e75tnxoj5oeprcvqtcmnss2dq/0irzwvl95s5bekgkpjmawl20u.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p-e75tnxoj5oeprcvqtcmnss2dq/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p-e75tnxoj5oeprcvqtcmnss2dq/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p-e75tnxoj5oeprcvqtcmnss2dq/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p-e75tnxoj5oeprcvqtcmnss2dq/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3bw7k4e2buwzy/s-hio0rrzzph-1alq03p.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/00qp8uafng96uv221c1cei8u4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/20v07rieqwznqlvw7sdkjg2xg.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/a30cyuofn01610yy4t31a0t4f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/auqs1sha3wuu05fd4wur81o3s.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/d1d1ce5uou8za2ew5brozptgp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f-1nssspu72vftlrqxlrg6mqako/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/ADC-3qih3cay0pap8/s-hio0rxnqml-1idc02f.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/3v25tpjc8x46cbicuw80usj5v.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/4su56baa13szj026vqeaejkh5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/7z8gzhppgy0yqnu8oow064ygr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/al3x58vp5z2dggscq6kgg410b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/bycu246r67k01681d0z3kle98.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr-28j2o8uj0fa0mwamnklcownzs/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0srf3yg-0nrr0mr.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/3v25tpjc8x46cbicuw80usj5v.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/4su56baa13szj026vqeaejkh5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/7z8gzhppgy0yqnu8oow064ygr.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/al3x58vp5z2dggscq6kgg410b.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/bycu246r67k01681d0z3kle98.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-0jvluovzxqizv/s-hio0uxvv0j-09igkaq.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c-4s35wmtjfp9fyga7eekokywk6/3zxmpcnqs5je9e82ysbcde7gu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c-4s35wmtjfp9fyga7eekokywk6/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c-4s35wmtjfp9fyga7eekokywk6/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c-4s35wmtjfp9fyga7eekokywk6/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c-4s35wmtjfp9fyga7eekokywk6/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0srf410-0449j6c.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/3zxmpcnqs5je9e82ysbcde7gu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc-3a77cv5n8muns/s-hio0uxvv01-1uu3fl5.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/1ni1wszfb0f50cm5ezwwogewj.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/56wcff7dr9cs3qs4yqhbka898.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/7ginn1c4qaag7bxzxj0ojnend.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg-3tmbdnlprqk10xydjd658lfa9/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-355juseh560td/s-hio0y0prpp-06qwsjg.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/066asepyv1yblm6efql4fgcde.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/0ess0ccyfnt68fuy62ufgg5e4.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/0j3tkc83vz5nkgysymuvcb5qt.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/1hw1scb3sv6yv9mkkjo29gmpg.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/21jyneq3w1wknyhpl5olj2tve.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/3id3rrwijw6q2k68qmddcfeti.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/3vhdspci7b6l10sc1px1e0ic8.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/4a313hw0idjwm9qtcbmu4rde7.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/4gfewqu89wqgufkurofxz6wpl.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/7lkdtl0x4eyvvers5v4x3n2ht.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/7w775as52xolzw5ioghkf118h.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/7wvyoevlj3qyzkk3llo8ksf57.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/8qjy0wzkzswn1wg07amkps576.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/9c0arggiyy5p7m4ggwx6mswej.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/9i9vi2ho78e3ortuz0ycd8i89.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/9q24pbn8ocr4m8ys712l75h96.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/ajfu0ulpenld14r1xa481bzyx.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/alcqxchmajzef7c9ka1rwo2ew.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/atzdcyhndsnh0hdxe4hz28nyn.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/auu335fq1mdmjv7lgfqm2ee0f.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/c6xv4zv6bmhjn18mhdyvirq8u.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/cqfgdej83moef8i3kf7vnqxlk.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/dncn9ipoy346p8cj7iml656eu.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/dsn1tiduchsyghudnhcm8yclb.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/efa1vaswpjycc6ge2rvf46uf0.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/enalxmzzig5bpq36o4qs2kxzi.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/eskk2r5zs6j4v4ghbv50sy8q5.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5-3pfxb94shb9ibywfg9nigg0v0/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/incremental/adc_pac-3son5lahsarmd/s-hio0y4e1pp-0lknig5.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/libADC.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/libADC.rlib" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/libadc_pac.d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/debug/libadc_pac.rlib" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,6 +174,9 @@
   <component name="MacroExpansionManager">
     <option name="directoryName" value="umOExZbM" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2,
   &quot;fromUser&quot;: false
@@ -51,56 +186,90 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Cargo.Test test::tests::channel_mode_reg_encode_decode.executor": "Run",
-    "Cargo.Test test::tests::channel_mode_reg_reset_is_sinc5_x1024.executor": "Run",
-    "Cargo.Test test::tests::channel_standby_roundtrip.executor": "Run",
-    "Cargo.Test test::tests::dec_rate_factors.executor": "Run",
-    "Cargo.Test test::tests::power_mode_reg_eco_pairing.executor": "Run",
-    "Cargo.Test test::tests::spi_frame_read.executor": "Run",
-    "Cargo.Test test::tests::spi_frame_write.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.rust.reset.selective.auto.import": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "adc",
-    "junie.onboarding.icon.badge.shown": "true",
-    "last_directory_selection": "/home/eric/DH10/imu-board/ADC",
-    "last_opened_file_path": "/home/eric/DH10/imu-board/ad7768-pac",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
-    "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
-    "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Cargo.Test test::tests::channel_mode_reg_encode_decode.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::channel_mode_reg_reset_is_sinc5_x1024.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::channel_standby_roundtrip.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::dec_rate_factors.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::power_mode_reg_eco_pairing.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::spi_frame_read.executor&quot;: &quot;Run&quot;,
+    &quot;Cargo.Test test::tests::spi_frame_write.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.rust.reset.selective.auto.import&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;adc&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;/home/eric/DH10/imu-board/ADC&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/eric/DH10/imu-board/ad7768-pac&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;org.rust.cargo.project.model.PROJECT_DISCOVERY&quot;: &quot;true&quot;,
+    &quot;org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon&quot;: &quot;&quot;,
+    &quot;org.rust.first.attach.projects&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;language.rust.rustfmt&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/ad7768-pac" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/ADC" />
       <recent name="$PROJECT_DIR$/ADC/src" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
-      <recent name="$PROJECT_DIR$/ADC/ad7768-pac/src" />
     </key>
   </component>
   <component name="RunManager" selected="Cargo.Test test::tests::power_mode_reg_eco_pairing">
     <configuration name="Test test::tests::channel_mode_reg_encode_decode" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_mode_reg_encode_decode --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::channel_mode_reg_encode_decode" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_mode_reg_encode_decode --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::channel_mode_reg_reset_is_sinc5_x1024" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_mode_reg_reset_is_sinc5_x1024 --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -150,8 +319,59 @@
         <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test test::tests::channel_standby_roundtrip" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::channel_standby_roundtrip --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test test::tests::power_mode_reg_eco_pairing" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
       <option name="command" value="test --package ad7768-pac --lib -- test::tests::power_mode_reg_eco_pairing --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::power_mode_reg_eco_pairing" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::power_mode_reg_eco_pairing --exact" />
+      <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
+      <envs />
+      <option name="emulateTerminal" value="true" />
+      <option name="channel" value="DEFAULT" />
+      <option name="requiredFeatures" value="true" />
+      <option name="allFeatures" value="false" />
+      <option name="withSudo" value="false" />
+      <option name="buildTarget" value="REMOTE" />
+      <option name="backtrace" value="SHORT" />
+      <option name="isRedirectInput" value="false" />
+      <option name="redirectInputPath" value="" />
+      <method v="2">
+        <option name="CARGO.BUILD_TASK_PROVIDER" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test test::tests::spi_frame_read" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
+      <option name="command" value="test --package ad7768-pac --lib -- test::tests::spi_frame_read --exact" />
       <option name="workingDirectory" value="file://$PROJECT_DIR$/ADC/ad7768-pac" />
       <envs />
       <option name="emulateTerminal" value="true" />
@@ -207,7 +427,10 @@
       <workItem from="1778240057666" duration="558000" />
       <workItem from="1778917845210" duration="25375000" />
       <workItem from="1779093518469" duration="15230000" />
-      <workItem from="1779177331157" duration="25414000" />
+      <workItem from="1779177331157" duration="27069000" />
+      <workItem from="1779528187270" duration="5883000" />
+      <workItem from="1779534149238" duration="1843000" />
+      <workItem from="1779536023727" duration="5416000" />
     </task>
     <servers />
   </component>
@@ -224,5 +447,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

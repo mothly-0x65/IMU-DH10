@@ -1,17 +1,17 @@
+#![no_std]
 use embassy_stm32::{
     exti::ExtiInput,
-    gpio::{ Level, Output, Pin, },
+    gpio::Output,
     spi::Spi,
-    time::Hertz,
 };
 
-use embassy_stm32::i2c::Master;
+use embassy_stm32::spi::mode::Master;
 use embassy_stm32::mode::Async;
 use embassy_stm32::spi::mode::Slave;
 use embassy_time::{Duration, Timer};
 use embedded_hal_async::spi::{ErrorType, SpiBus};
 use ad7768_pac::*;
-use ad7768_pac::registers::registers::{ChannelModeReg, ChannelStandby, DataControl, DeviceStatus, InterfaceConfig, PowerModeReg, RevisionId};
+use ad7768_pac::registers::registers::{Cal24, ChannelModeReg, ChannelStandby, DataControl, DeviceStatus, InterfaceConfig, PowerModeReg, RevisionId};
 use crate::Error::BadRevision;
 
 #[derive(Debug, defmt::Format)]
@@ -30,8 +30,8 @@ pub enum Error {
 }
 
 
-impl<E> From<E> for Error {
-    fn from(e: E) -> Self { Error::Spi(e) }
+impl From<embassy_stm32::spi::Error> for Error {
+    fn from(e: embassy_stm32::spi::Error) -> Self { Error::Spi(e) }
 }
 
 
@@ -70,7 +70,6 @@ impl Default for Ad7768Config {
         }
     }
 }
-
 
 
 // ---------------------------------------------------------------------------
@@ -148,7 +147,7 @@ impl<'d> Ad7768<'d>
     }
 
     /// Write a register (one 16-bit frame)
-    pub async fn write_reg<E>(&mut self, addr: u8, data: u8) -> Result<(), Error>
+    pub async fn write_reg(&mut self, addr: u8, data: u8) -> Result<(), Error>
     {
         self.transfer16(spi_write_frame(addr, data)).await?;
         Ok(())
@@ -202,8 +201,8 @@ impl<'d> Ad7768<'d>
 
     /// Software reset via the SPI data control register.
     pub async fn soft_reset(&mut self) -> Result<(), Error> {
-        self.write_reg(addr::addr::DATA_CONTROL, u8::from(DataControl::reset_byte1())).await?;
-        self.write_reg(addr::addr::DATA_CONTROL, u8::from(DataControl::reset_byte2())).await?;
+        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte1())).await?;
+        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte2())).await?;
         Timer::after(Duration::from_micros(5)).await;
         Ok(())
     }
@@ -257,4 +256,91 @@ impl<'d> Ad7768<'d>
     pub async fn status(&mut self) -> Result<DeviceStatus, Error> {
         Ok(DeviceStatus(self.read_reg(DeviceStatus::ADDR).await?))
     }
+
+    // -----------------------------------------------------------------------
+    // Data capture — DRDY interrupt driven
+    // -----------------------------------------------------------------------
+
+    /// Wait for a DRDY falling edge then read one 32-bit frame from the data
+    /// SPI bus (DOUT0, TDM mode).
+    pub async fn read_frame<E>(&mut self, timeout_us: u64) -> Result<AdcFrame, Error> {
+        self.wait_drdy(timeout_us).await?;
+        let frame = AdcFrame::from_u32(self.read_data_word().await?);
+        if frame.header.chip_error {
+            Err(Error::ChipError)
+        } else {
+            Ok(frame)
+        }
+    }
+
+    /// Wait for DRDY then read 8 consecutive 32-bit frames (TDM / FORMAT=11).
+    pub async fn read_all_channels(
+        &mut self,
+        timeout_us: u64,
+        out: &mut [AdcFrame; 8],
+    ) -> Result<(), Error> {
+        self.wait_drdy(timeout_us).await?;
+        for slot in out.iter_mut() {
+            *slot = AdcFrame::from_u32(self.read_data_word().await?);
+            if slot.header.chip_error { return Err(Error::ChipError) }
+        }
+        Ok(())
+    }
+
+    async fn wait_drdy(&mut self, timeout_us: u64) -> Result<(), Error> {
+        use embassy_futures::select::{select, Either};
+        let timeout = Timer::after(Duration::from_millis(timeout_us));
+        let drdy_fall = self.drdy.wait_for_falling_edge();
+        match select(drdy_fall, timeout).await {
+            Either::First(_) => Ok(()),
+            Either::Second(_) => Err(Error::Timeout),
+        }
+    }
+
+    async fn read_data_word(&mut self) -> Result<u32, Error> {
+        use embedded_hal_async::spi::SpiBus;
+        let mut buf = [0u8; 4];
+        // data_spi is slave - the AD7768 drives DCLK so this just waits fpr
+        // 32 bits to be clocked in. No CS involved in this case:
+        // DRDY frames the transfer.
+        // For reference take a look at the schematic of the IMU board.
+        self.data_spi.read(&mut buf).await?;
+        Ok(u32::from_be_bytes(buf))
+    }
+
+    // -----------------------------------------------------------------------
+    // Per-channel callibration
+    // -----------------------------------------------------------------------
+
+    /// Write a 24-bit signed offset value for `channel` (0-7).
+    pub async fn set_offset(&mut self, channel: u8, value: Cal24) -> Result<(), Error> {
+        debug_assert!(channel < 8);
+        let base = 0x1E + channel * 3;
+        self.write_reg(base, value.msb()).await?;
+        self.write_reg(base + 1, value.mid()).await?;
+        self.write_reg(base + 2, value.lsb()).await?;
+
+        Ok(())
+    }
+
+    /// Read back the 24-bit signed offset for `channel` (0-7).
+    pub async fn get_offset(&mut self, channel: u8) -> Result<Cal24, Error> {
+        debug_assert!(channel < 8);
+        let base = 0x1E + channel * 3;
+        let msb = self.read_reg(base).await?;
+        let mid = self.read_reg(base + 1).await?;
+        let lsb = self.read_reg(base + 2).await?;
+        Ok(Cal24::from_bytes(msb, mid, lsb))
+    }
+
+    /// Write a 24 bit gain value for `channel`. Reset to factory on power cycle.
+    pub async fn set_gain(&mut self, channel: u8, value: Cal24) -> Result<(), Error> {
+        debug_assert!(channel < 8);
+        let base = 0x36 + channel * 3;
+        self.write_reg(base, value.msb()).await?;
+        self.write_reg(base + 1, value.mid()).await?;
+        self.write_reg(base + 2, value.lsb()).await?;
+        Ok(())
+    }
+
 }
