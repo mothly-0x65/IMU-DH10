@@ -289,7 +289,7 @@ impl<'d> Ad7768<'d>
 
     async fn wait_drdy(&mut self, timeout_us: u64) -> Result<(), Error> {
         use embassy_futures::select::{select, Either};
-        let timeout = Timer::after(Duration::from_millis(timeout_us));
+        let timeout = Timer::after(Duration::from_micros(timeout_us));
         let drdy_fall = self.drdy.wait_for_falling_edge();
         match select(drdy_fall, timeout).await {
             Either::First(_) => Ok(()),
