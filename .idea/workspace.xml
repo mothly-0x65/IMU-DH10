@@ -21,15 +21,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/imu-board.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/imu-board.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ADC/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/src/lib.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/target/.rustc_info.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MCU/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCU/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/src/main.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/PHY/lan8742/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/PHY/lan8742/Cargo.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -310,7 +304,8 @@
       <workItem from="1779620135840" duration="290000" />
       <workItem from="1779620450747" duration="188000" />
       <workItem from="1779620651156" duration="1076000" />
-      <workItem from="1779621857597" duration="2156000" />
+      <workItem from="1779621857597" duration="3986000" />
+      <workItem from="1779654463187" duration="2573000" />
     </task>
     <servers />
   </component>

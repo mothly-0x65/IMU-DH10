@@ -126,7 +126,7 @@ impl<'d> Ad7768<'d>
 
     // -----------------------------------------------------------------------
     // Low-level SPI helpers
-    // -----------------------------------------------------------------------
+    // -----------------------------r------------------------------------------
 
     /// Send a single 16-bit frame to the control spi, return the 16-bit response.
     ///
@@ -280,9 +280,13 @@ impl<'d> Ad7768<'d>
         out: &mut [AdcFrame; 8],
     ) -> Result<(), Error> {
         self.wait_drdy(timeout_us).await?;
-        for slot in out.iter_mut() {
-            *slot = AdcFrame::from_u32(self.read_data_word().await?);
-            if slot.header.chip_error { return Err(Error::ChipError) }
+
+        let mut buf = [0u8; 32];  // 8 channels × 4 bytes, one DMA burst
+        self.data_spi.read(&mut buf).await?;
+        for (i, slot)in out.iter_mut().enumerate() {
+            let word = u32::from_be_bytes(buf[i*4 .. i*4+4].try_into().unwrap());
+            *slot = AdcFrame::from_u32(word);
+            if slot.header.chip_error { return Err(Error::ChipError); }
         }
         Ok(())
     }
@@ -298,7 +302,6 @@ impl<'d> Ad7768<'d>
     }
 
     async fn read_data_word(&mut self) -> Result<u32, Error> {
-        use embedded_hal_async::spi::SpiBus;
         let mut buf = [0u8; 4];
         // data_spi is slave - the AD7768 drives DCLK so this just waits fpr
         // 32 bits to be clocked in. No CS involved in this case:

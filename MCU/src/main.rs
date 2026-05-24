@@ -4,13 +4,14 @@
 use defmt::{error, info, warn};
 use embassy_executor::Spawner;
 use embassy_stm32::eth::{Ethernet, PacketQueue};
-use embassy_stm32::{bind_interrupts, eth, peripherals, exti::ExtiInput,
+use embassy_stm32::{bind_interrupts,
+                    eth, peripherals,
+                    exti::ExtiInput,
                     gpio::{Input, Level, Output, Pull, Speed},
                     mode::Async,
                     spi::{self, Spi, Config},
                     time::Hertz,
                     interrupt,
-                    PeriConfigpherals,
                     dma
 };
 use embassy_net::{Ipv4Address, Ipv4Cidr, StaticConfigV4, Stack, StackResources};
@@ -98,7 +99,7 @@ async fn main(spawner: Spawner) {
         p.PC10,
         p.PC12,
         p.PC13,
-        p.PA15,
+        p.PB0,
         p.DMA1_CH2,
         p.DMA1_CH3,
         SPI3Irqs,
@@ -140,16 +141,16 @@ async fn main(spawner: Spawner) {
         p.ETH, //pins
         ETHIrqs,
         p.PA1,   // ref_clk
-        p.PA2,   // mdio
-        p.PC1,   // mdc
         p.PA7,   // crs_dv
         p.PC4,   // rxd0
         p.PC5,   // rxd1
-        p.PB11,  // tx_en
         p.PB12,  // txd0
         p.PB13,  // txd1
+        p.PB11,  // tx_en
+        mac_addr,
         Lan8742::new(0),
-        mac_addr
+        p.PA2,   // mdio
+        p.PC1,   // mdc
         )
     };
 
@@ -195,6 +196,26 @@ async fn main(spawner: Spawner) {
         match adc.read_all_channels(10_000, &mut frames).await {
             Ok(()) => {
                 n += 1;
+
+                let packet = ImuPacket {
+                    id: 0xAD77,
+                    channel_count: 8,
+                    sequence: seq,
+                    channels: core::array::from_fn(|i| {
+                        code_to_mv(frames[i].data, 2500) as f32
+                    })
+                };
+
+                let bytes = unsafe {
+                    core::slice::from_raw_parts(
+                        &packet as *const ImuPacket as *const u8,
+                        core::mem::size_of::<ImuPacket>(),
+                    )
+                };
+
+                socket.send_to(bytes, remote).await.unwrap();
+                seq += 1;
+
                 if n % 10 == 0 {
                     for f in &frames {
                         if cfg.standby_mask & (1 << f.header.channel_id) != 0 {
@@ -206,7 +227,7 @@ async fn main(spawner: Spawner) {
                         }
 
                         let mv = code_to_mv(f.data, 2500);
-                        info!("CH{}: {:+8} counts  {:+6} mV", f.header.channel_id, f.data, mv);
+                        info!("CH{}: {} counts  {} mV", f.header.channel_id, f.data, mv);
                     }
                     info!("--- {} samples ---", n);
                 }
@@ -219,37 +240,5 @@ async fn main(spawner: Spawner) {
             }
             Err(e) => error!("error: {:?}", e),
         }
-
-        let ch = [
-            frames[0].data as f32,
-            frames[1].data as f32,
-            frames[2].data as f32,
-            frames[3].data as f32,
-            frames[4].data as f32,
-            frames[5].data as f32,
-            frames[6].data as f32,
-            frames[7].data as f32
-        ];
-
-        let packet = ImuPacket {
-            id: 0xAD77,
-            channel_count: 8,
-            sequence: seq,
-            channels: ch // adc readings
-        };
-
-        let bytes = unsafe {
-            core::slice::from_raw_parts(
-                &packet as *const ImuPacket as *const u8,
-                core::mem::size_of::<ImuPacket>(),
-            )
-        };
-
-        socket.send_to(bytes, remote).await.unwrap();
-        seq += 1;
-
-        embassy_time::Timer::after_millis(10).await;
-
-
     }
 }
