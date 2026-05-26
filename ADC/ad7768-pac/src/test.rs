@@ -235,7 +235,7 @@ mod tests {
         // Fast mode, 32.768 MHz, dec×32 → 256 kSPS
         let odr = calc_odr_hz(32_768_000, MclkDiv::Div4, DecRate::X32);
         assert_eq!(odr, 256_000);
-        // Eco mode, dec×1024 → 1 kSPS
+        // Eco-mode, dec×1024 → 1 kSPS
         let odr2 = calc_odr_hz(32_768_000, MclkDiv::Div32, DecRate::X1024);
         assert_eq!(odr2, 1_000);
     }

@@ -7,4 +7,4 @@ resolver = "2"
 debug = 2
 opt-level = "s"
 lto = true
-codegen-units = 1gi
+codegen-units = 1
