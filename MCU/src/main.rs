@@ -1,9 +1,11 @@
 #![no_std]
 #![no_main]
 
+use defmt_rtt as _;
+use panic_probe as _;
 use defmt::{error, info, warn};
 use embassy_executor::Spawner;
-use embassy_stm32::eth::{Ethernet, PacketQueue};
+use embassy_stm32::eth::{Ethernet, GenericPhy, PacketQueue, Sma};
 use embassy_stm32::{bind_interrupts,
                     eth, peripherals,
                     exti::ExtiInput,
@@ -14,10 +16,10 @@ use embassy_stm32::{bind_interrupts,
                     interrupt,
                     dma
 };
-use embassy_net::{Ipv4Address, Ipv4Cidr, StaticConfigV4, Stack, StackResources};
+use embassy_net::{Ipv4Address, Ipv4Cidr, StaticConfigV4, Stack, StackResources, Runner};
+use embassy_stm32::peripherals::{ETH, ETH_SMA};
 use lan8742::Lan8742;
 use embassy_net::udp::{UdpSocket, PacketMetadata};
-use embassy_stm32::interrupt::SPI3;
 use embassy_stm32::pac::exti::Exti;
 use static_cell::StaticCell;
 use embassy_time::{Duration, Timer};
@@ -32,13 +34,17 @@ mod mpu;
 
 #[repr(C, packed)]
 struct ImuPacket {
-    id: u16, // 0xAD77 - identifier for the imu packet
-    channel_count: u8, // always 8
-    sequence: u32, // increments every packet, lets PLC detect drops
-    channels: [f32; 8], // the 8 ADC channel values
+    sync: u16,
+    sequence: u32,
+    accel_x: f32,
+    accel_y: f32,
+    accel_z: f32,
+    gyro_x: f32,
+    gyro_y: f32,
+    gyro_z: f32,
 }
 
-bind_interrupts!(struct ETHIrqs {
+bind_interrupts!(struct Irqs {
     ETH => eth::InterruptHandler;
 });
 
@@ -57,20 +63,23 @@ bind_interrupts!(struct DrdyIrq {
 );
 
 
-#[link_section = ".eth_buffers"]
-static mut PACKETS: PacketQueue<4, 4> = PacketQueue::new();
-
+#[unsafe(link_section = ".eth_buffers")]
+static PACKETS: StaticCell<PacketQueue<4, 4>> = StaticCell::new();
 static RESOURCES: StaticCell<StackResources<3>> = StaticCell::new();
 
+static STACK: StaticCell<Stack> = StaticCell::new();
 
-// this task runs the newtork stack forever in the background
+
+// this task runs the network stack forever in the background
 #[embassy_executor::task]
-async fn net_task(stack: &'static Stack<Ethernet<'static, ETH, Lan8742>>) {
-    stack.run().await 
+async fn net_task(mut runner: Runner<'static, Ethernet<'static, ETH, Lan8742<Sma<'static, ETH_SMA>>>>) {
+    runner.run().await
 }
+
 
 #[embassy_executor::main]
 async fn main(spawner: Spawner) {
+    defmt::info!("main task start");
     mpu::init();
 
     let p = embassy_stm32::init(Default::default()); // import peripherals
@@ -98,12 +107,12 @@ async fn main(spawner: Spawner) {
         p.SPI3,
         p.PC10,
         p.PC12,
-        p.PC13,
-        p.PB0,
+        p.PC11,     // dummy: we don't use a miso
+        p.PA4,      // dummy: drdy is set as EXTInput below
         p.DMA1_CH2,
         p.DMA1_CH3,
         SPI3Irqs,
-        spi::Config::default(),
+        Config::default(),
     );
 
     let cs = Output::new(p.PE4, Level::High, Speed::High);
@@ -132,47 +141,62 @@ async fn main(spawner: Spawner) {
     }
     let mut frames = [AdcFrame::from_u32(0); 8];
     let mut n = 0u32;
+    info!("MPU initialized");
+    let p = embassy_stm32::init(Default::default());
 
     let mac_addr = [0x00, 0x00, 0xDE, 0xAD, 0xBE, 0xEF];
 
+    let sma_driver = Sma::new(p.ETH_SMA, p.PA2, p.PC1);
+    let eth_phy = Lan8742::new(0x00, sma_driver);
+
+    let packet_queue = unsafe{PACKETS.init(PacketQueue::new())};
+
     let eth_driver = unsafe {
-        Ethernet::new(
-        &mut PACKETS, //packet buffers
-        p.ETH, //pins
-        ETHIrqs,
-        p.PA1,   // ref_clk
-        p.PA7,   // crs_dv
-        p.PC4,   // rxd0
-        p.PC5,   // rxd1
-        p.PB12,  // txd0
-        p.PB13,  // txd1
-        p.PB11,  // tx_en
-        mac_addr,
-        Lan8742::new(0),
-        p.PA2,   // mdio
-        p.PC1,   // mdc
+        // We use an external PHY Lan8742
+        Ethernet::new_with_phy(
+            packet_queue,
+            p.ETH,
+            Irqs,
+            p.PA1,  // ref_clk
+            p.PA7,  // crs_dv
+            p.PC4,  // rxd0
+            p.PC5,  // rxd1
+            #[cfg(feature = "nucleo")]
+            p.PG13, // txd0 (nucleo)
+            #[cfg(not(feature = "nucleo"))]
+            p.PB12, // txd0 (custom board)
+            #[cfg(feature = "nucleo")]
+            p.PB13, // txd1 (nucleo)
+            #[cfg(not(feature = "nucleo"))]
+            p.PB13, // txd1 (custom board)
+            //#[cfg(feature = "nucleo")]
+            //p.PG11, // tx_en (nucleo)
+            #[cfg(not(feature = "nucleo"))]
+            p.PB11, // tx_en (custom board)
+            mac_addr,
+            eth_phy,
         )
     };
 
-    let config = Config::ipv4_static(StaticConfigV4 {
+    let config = embassy_net::Config::ipv4_static(StaticConfigV4 {
         address: Ipv4Cidr::new(Ipv4Address::new(192, 168, 1, 1), 24),
-        gateway: None, 
+        gateway: None,
         dns_servers: heapless::Vec::new(),
     });
 
     let resources = RESOURCES.init(StackResources::new());
 
-    let stack = &*make_static!(Stack::new(
+    let (stack, runner) = embassy_net::new(
         eth_driver,
         config,
         resources,
-        1234567890 // random seed
-    ));
+        1234567890,
+    );
 
-    //spawn tasks 
-    spawner.spawn(net_task(stack)).unwrap(); 
+    spawner.spawn(net_task(runner).expect("REASON"));
 
-    // buffers for the UDP socket
+    info!("network stack started, sending IMU packets...");
+
     let mut rx_meta = [PacketMetadata::EMPTY; 4];
     let mut rx_buffer = [0u8; 1024];
     let mut tx_meta = [PacketMetadata::EMPTY; 4];
@@ -188,9 +212,11 @@ async fn main(spawner: Spawner) {
 
     socket.bind(1234).unwrap();
 
+    let mut led = Output::new(p.PB0, Level::Low, Speed::Low);
+
     let remote = (Ipv4Address::new(192, 168, 1, 2), 1234);
 
-    let mut seq: u32 = 0; // initiate sqeuence number before sending first packet
+    let mut seq: u32 = 0;
 
     loop {
         match adc.read_all_channels(10_000, &mut frames).await {
@@ -198,22 +224,29 @@ async fn main(spawner: Spawner) {
                 n += 1;
 
                 let packet = ImuPacket {
-                    id: 0xAD77,
-                    channel_count: 8,
+                    sync: 0xAD77,
                     sequence: seq,
-                    channels: core::array::from_fn(|i| {
-                        code_to_mv(frames[i].data, 2500) as f32
-                    })
+                    accel_x: code_to_mv(frames[0].data, 2500) as f32,
+                    accel_y: code_to_mv(frames[1].data, 2500) as f32,
+                    accel_z: code_to_mv(frames[2].data, 2500) as f32,
+                    gyro_x: code_to_mv(frames[4].data, 2500) as f32,
+                    gyro_y: code_to_mv(frames[5].data, 2500) as f32,
+                    gyro_z: code_to_mv(frames[6].data, 2500) as f32,
                 };
 
-                let bytes = unsafe {
-                    core::slice::from_raw_parts(
-                        &packet as *const ImuPacket as *const u8,
-                        core::mem::size_of::<ImuPacket>(),
-                    )
-                };
-                socket.send_to(bytes, remote).await.unwrap();
-                seq += 1;
+        let bytes = unsafe {
+            core::slice::from_raw_parts(
+                &packet as *const ImuPacket as *const u8,
+                core::mem::size_of::<ImuPacket>(),
+            )
+        };
+
+        match socket.send_to(bytes, remote).await {
+            Ok(_) => led.toggle(),
+            Err(_) => {} // silent fail
+        }
+        defmt::info!("sent packet seq={}", seq);
+        seq += 1;
 
                 if n % 10 == 0 {
                     for f in &frames {

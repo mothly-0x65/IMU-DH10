@@ -1,0 +1,10 @@
+[workspace]
+members = ["MCU", "PHY/lan8742"]
+resolver = "2"
+
+
+[profile.release]
+debug = 2
+opt-level = "s"
+lto = true
+codegen-units = 1gi

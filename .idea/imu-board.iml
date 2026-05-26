@@ -10,6 +10,7 @@
       <excludeFolder url="file://$MODULE_DIR$/ADC/target" />
       <excludeFolder url="file://$MODULE_DIR$/MCU/target" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
+      <excludeFolder url="file://$MODULE_DIR$/PHY/lan8742/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
