@@ -22,7 +22,7 @@
   <component name="ChangeListManager">
     <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ADC/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/Cargo.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MCU/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/src/main.rs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -305,7 +305,7 @@
       <workItem from="1779620450747" duration="188000" />
       <workItem from="1779620651156" duration="1076000" />
       <workItem from="1779621857597" duration="3986000" />
-      <workItem from="1779654463187" duration="2573000" />
+      <workItem from="1779654463187" duration="13789000" />
     </task>
     <servers />
   </component>
@@ -322,17 +322,6 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/ADC/ad7768-pac/src/test.rs</url>
-          <line>94</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

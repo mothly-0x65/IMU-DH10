@@ -53,8 +53,8 @@ bind_interrupts!(struct SPI3Irqs {
 });
 
 bind_interrupts!(struct DrdyIrq {
-   EXTI15_10 => embassy_stm32::exti::InterruptHandler<peripherals::EXTI15>;
-});
+    EXTI15_10 => embassy_stm32::exti::InterruptHandler<interrupt::typelevel::EXTI15_10>;}
+);
 
 
 #[link_section = ".eth_buffers"]
@@ -212,7 +212,7 @@ async fn main(spawner: Spawner) {
                         core::mem::size_of::<ImuPacket>(),
                     )
                 };
-
+co
                 socket.send_to(bytes, remote).await.unwrap();
                 seq += 1;
 
