@@ -13,9 +13,13 @@ mod mpu;
 #[repr(C, packed)]
 struct ImuPacket {
     id: u16, // 0xAD77 - identifier for the imu packet
-    channel_count: u8, // always 8
     sequence: u32, // increments every packet, lets PLC detect drops
-    channels: [f32; 8], // the 8 ADC channel values
+    accel_x: f32,
+    accel_y: f32,
+    accel_z: f32,
+    gyro_x: f32,
+    gyro_y: f32,
+    gyro_z: f32,
 }
 
 bind_interrupts!(struct Irqs {
@@ -102,9 +106,13 @@ async fn main(spawner: Spawner) {
     loop {
         let packet = ImuPacket {
             id: 0xAD77,
-            channel_count: 8,
             sequence: seq,
-            channels: [ch0, ch1, ch2, ch3, ch4, ch5, ch6, ch7] // adc readings
+            accel_x: 0.0,
+            accel_y: 0.0,
+            accel_z: 0.0,
+            gyro_x: 0.0,
+            gyro_y: 0.0,
+            gyro_z: 0.0,
         };
 
         let bytes = unsafe {
