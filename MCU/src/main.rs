@@ -212,7 +212,6 @@ async fn main(spawner: Spawner) {
                         core::mem::size_of::<ImuPacket>(),
                     )
                 };
-co
                 socket.send_to(bytes, remote).await.unwrap();
                 seq += 1;
 
