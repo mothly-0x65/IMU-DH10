@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/thumbv7em-none-eabihf/debug/build/defmt-98ef91132d793e59/out
+cargo:rustc-check-cfg=cfg(c_variadic)
+cargo:rustc-check-cfg=cfg(no_cas)

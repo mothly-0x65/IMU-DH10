@@ -3,8 +3,7 @@
 /// don't get out of sync due to the Cortex-M7 cache.
 pub fn init() {
     unsafe {
-        let mpu = &*cortex_m::peripherals::MPU::PTR; // memory processing unit register 
-        let scb = &*cortex_m::peripherals::SCB::PTR; 
+        let mpu = &*cortex_m::peripheral::MPU::PTR; // memory processing unit register 
 
         mpu.ctrl.write(0); // disable the mpu before configuring it
 

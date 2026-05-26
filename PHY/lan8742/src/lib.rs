@@ -29,7 +29,7 @@ unsafe impl PHY for Lan8742 {
         sm.smi_write(self.addr, BCR, BCR_AUTONEG); 
     }
 
-    fn poll_link<S: StationManagement>(&mut self, sm: &mut S, cx: &mut Context) -> bool {
+    fn poll_link<S: StationManagement>(&mut self, sm: &mut S, _cx: &mut Context) -> bool {
         let bsr_value = sm.smi_read(self.addr, BSR);
         if bsr_value & 0x0004 == 0 { //if bit 2 is 0 then link is down so return false
             return false; 

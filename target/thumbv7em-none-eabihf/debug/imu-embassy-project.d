@@ -1,0 +1,1 @@
+/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/thumbv7em-none-eabihf/debug/imu-embassy-project: /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/MCU/src/main.rs /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/MCU/src/mpu.rs /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/PHY/lan8742/src/lib.rs
