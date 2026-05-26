@@ -1,0 +1,10 @@
+/home/eric/DH10/imu-board/target/debug/deps/embassy_executor_macros-494d7f22aa7b3750.d: /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/lib.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/mod.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/main.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/task.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/util.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/../README.md
+
+/home/eric/DH10/imu-board/target/debug/deps/libembassy_executor_macros-494d7f22aa7b3750.so: /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/lib.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/mod.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/main.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/task.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/util.rs /home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/../README.md
+
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/lib.rs:
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/mod.rs:
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/main.rs:
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/macros/task.rs:
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/util.rs:
+/home/eric/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/embassy-executor-macros-0.8.0/src/../README.md:

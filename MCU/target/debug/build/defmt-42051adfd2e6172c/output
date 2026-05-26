@@ -1,0 +1,3 @@
+cargo:rustc-link-search=/home/eric/DH10/imu-board/MCU/target/debug/build/defmt-42051adfd2e6172c/out
+cargo:rustc-check-cfg=cfg(c_variadic)
+cargo:rustc-check-cfg=cfg(no_cas)
