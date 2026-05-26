@@ -1,0 +1,3 @@
+cargo:rustc-env=STM32_METAPAC_PAC_PATH=chips/stm32h753zi/pac.rs
+cargo:rustc-env=STM32_METAPAC_METADATA_PATH=chips/stm32h753zi/metadata.rs
+cargo:rerun-if-changed=build.rs
