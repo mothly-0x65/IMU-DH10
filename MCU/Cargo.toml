@@ -16,3 +16,6 @@ panic-probe = { version = "0.3", features = ["print-defmt"] }
 static_cell = "2"
 heapless = "0.8"
 lan8742 = { path = "../PHY/lan8742" }
+
+[features]
+nucleo = []

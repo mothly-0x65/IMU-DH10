@@ -1,0 +1,14 @@
+/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/deps/thiserror-158d3603bff5d88b.d: /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/build/thiserror-250640ad982c4584/out/private.rs
+
+/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/deps/libthiserror-158d3603bff5d88b.rlib: /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/build/thiserror-250640ad982c4584/out/private.rs
+
+/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/deps/libthiserror-158d3603bff5d88b.rmeta: /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs /Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs /Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/build/thiserror-250640ad982c4584/out/private.rs
+
+/Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/lib.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/aserror.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/display.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/var.rs:
+/Users/tudor/.cargo/registry/src/index.crates.io-1949cf8c6b5b557f/thiserror-2.0.18/src/private.rs:
+/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/build/thiserror-250640ad982c4584/out/private.rs:
+
+# env-dep:OUT_DIR=/Users/tudor/Documents/Hyperloop/IMU/Code/IMU-DH10/target/release/build/thiserror-250640ad982c4584/out
