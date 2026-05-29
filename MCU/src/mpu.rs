@@ -1,5 +1,5 @@
 /// Configures the MPU to mark D2 SRAM (0x30000000) as non-cacheable.
-/// This is required on STM32H7 so that the Ethernet DMA and CPU 
+/// This is required on STM32H7 so that the Ethernet DMA and CPU
 /// don't get out of sync due to the Cortex-M7 cache.
 pub fn init() {
     unsafe {
@@ -20,13 +20,13 @@ pub fn init() {
             (0 << 17)     |  // C: cacheable = 0 (disabled)
             (0 << 16)     |  // B: bufferable = 0 (disabled)
             (0b10000 << 1)|  // SIZE: 2^(16+1) = 128KB, matches our SRAM1 region
-            (1 << 0)         // ENABLE: turn this region on 
+            (1 << 0), // ENABLE: turn this region on
         );
-        
+
         // re-enable mpu
         // bit 0 = enable mpu
         // bit 2 = use default memory map for regions not covered by mpu
-        mpu.ctrl.write((1<<2) | (1 << 0));
+        mpu.ctrl.write((1 << 2) | (1 << 0));
 
         // instruction and data barrier - flush the pipeline
         cortex_m::asm::dsb();

@@ -29,7 +29,7 @@ mod test;
 ///
 /// `[ 0 | addr[6:0] | data[7:0] ]`
 #[inline(always)]
-pub const fn  spi_write_frame(addr: u8, data: u8) -> u16 {
+pub const fn spi_write_frame(addr: u8, data: u8) -> u16 {
     ((addr as u16) << 8) | (data as u16)
 }
 
@@ -345,7 +345,11 @@ pub enum ChannelMode {
 
 impl From<bool> for ChannelMode {
     fn from(b: bool) -> Self {
-        if b { ChannelMode::ModeB } else { ChannelMode::ModeA }
+        if b {
+            ChannelMode::ModeB
+        } else {
+            ChannelMode::ModeA
+        }
     }
 }
 
@@ -475,22 +479,22 @@ impl StatusHeader {
     /// Parse an 8-bit header byte.
     pub fn from_byte(b: u8) -> Self {
         Self {
-            chip_error:         b & 0x80 != 0,
+            chip_error: b & 0x80 != 0,
             filter_not_settled: b & 0x40 != 0,
-            repeated_data:      b & 0x20 != 0,
-            sinc5_filter:       b & 0x10 != 0,
-            filter_saturated:   b & 0x08 != 0,
-            channel_id:         b & 0x07,
+            repeated_data: b & 0x20 != 0,
+            sinc5_filter: b & 0x10 != 0,
+            filter_saturated: b & 0x08 != 0,
+            channel_id: b & 0x07,
         }
     }
 
     /// Reconstruct the raw byte (useful for testing).
     pub fn to_byte(self) -> u8 {
-        (self.chip_error        as u8) << 7
+        (self.chip_error as u8) << 7
             | (self.filter_not_settled as u8) << 6
-            | (self.repeated_data      as u8) << 5
-            | (self.sinc5_filter       as u8) << 4
-            | (self.filter_saturated   as u8) << 3
+            | (self.repeated_data as u8) << 5
+            | (self.sinc5_filter as u8) << 4
+            | (self.filter_saturated as u8) << 3
             | (self.channel_id & 0x07)
     }
 }

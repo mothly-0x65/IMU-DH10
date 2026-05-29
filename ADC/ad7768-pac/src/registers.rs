@@ -34,8 +34,8 @@
 
 /// All typed register structs.
 pub mod registers {
-    use crate::*;
     use crate::addr::addr::*;
+    use crate::*;
 
     // -----------------------------------------------------------------------
     // 0x00 – Channel Standby
@@ -98,10 +98,14 @@ pub mod registers {
     }
 
     impl From<u8> for ChannelStandby {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<ChannelStandby> for u8 {
-        fn from(r: ChannelStandby) -> u8 { r.0 }
+        fn from(r: ChannelStandby) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -154,13 +158,19 @@ pub mod registers {
     }
 
     impl Default for ChannelModeReg {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for ChannelModeReg {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<ChannelModeReg> for u8 {
-        fn from(r: ChannelModeReg) -> u8 { r.0 }
+        fn from(r: ChannelModeReg) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -202,18 +212,28 @@ pub mod registers {
 
         /// Assign all channels to Mode A.
         #[inline]
-        pub fn all_mode_a(mut self) -> Self { self.0 = 0x00; self }
+        pub fn all_mode_a(mut self) -> Self {
+            self.0 = 0x00;
+            self
+        }
 
         /// Assign all channels to Mode B.
         #[inline]
-        pub fn all_mode_b(mut self) -> Self { self.0 = 0xFF; self }
+        pub fn all_mode_b(mut self) -> Self {
+            self.0 = 0xFF;
+            self
+        }
     }
 
     impl From<u8> for ChannelModeSelect {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<ChannelModeSelect> for u8 {
-        fn from(r: ChannelModeSelect) -> u8 { r.0 }
+        fn from(r: ChannelModeSelect) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -254,12 +274,18 @@ pub mod registers {
 
         /// Read the sleep mode bit.
         #[inline]
-        pub fn sleep_mode(self) -> bool { self.0 & 0x80 != 0 }
+        pub fn sleep_mode(self) -> bool {
+            self.0 & 0x80 != 0
+        }
 
         /// Enable or disable sleep mode.
         #[inline]
         pub fn set_sleep(mut self, sleep: bool) -> Self {
-            if sleep { self.0 |= 0x80 } else { self.0 &= !0x80 }
+            if sleep {
+                self.0 |= 0x80
+            } else {
+                self.0 &= !0x80
+            }
             self
         }
 
@@ -276,14 +302,20 @@ pub mod registers {
 
         /// Read the LVDS enable bit.
         #[inline]
-        pub fn lvds_enable(self) -> bool { self.0 & 0x08 != 0 }
+        pub fn lvds_enable(self) -> bool {
+            self.0 & 0x08 != 0
+        }
 
         /// Enable or disable the LVDS clock input.
         ///
         /// Only effective when `CLK_SEL` pin is high.
         #[inline]
         pub fn set_lvds_enable(mut self, en: bool) -> Self {
-            if en { self.0 |= 0x08 } else { self.0 &= !0x08 }
+            if en {
+                self.0 |= 0x08
+            } else {
+                self.0 &= !0x08
+            }
             self
         }
 
@@ -300,10 +332,14 @@ pub mod registers {
     }
 
     impl From<u8> for PowerModeReg {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<PowerModeReg> for u8 {
-        fn from(r: PowerModeReg) -> u8 { r.0 }
+        fn from(r: PowerModeReg) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -326,23 +362,35 @@ pub mod registers {
 
         /// Read the SYNC_OUT retime enable bit (bit 5).
         #[inline]
-        pub fn retime_enable(self) -> bool { self.0 & 0x20 != 0 }
+        pub fn retime_enable(self) -> bool {
+            self.0 & 0x20 != 0
+        }
 
         /// Set or clear the SYNC_OUT retime enable bit.
         #[inline]
         pub fn set_retime_enable(mut self, en: bool) -> Self {
-            if en { self.0 |= 0x20 } else { self.0 &= !0x20 }
+            if en {
+                self.0 |= 0x20
+            } else {
+                self.0 &= !0x20
+            }
             self
         }
 
         /// Read VCM power-down bit (bit 4). `true` = powered down.
         #[inline]
-        pub fn vcm_powered_down(self) -> bool { self.0 & 0x10 != 0 }
+        pub fn vcm_powered_down(self) -> bool {
+            self.0 & 0x10 != 0
+        }
 
         /// Power down (`true`) or enable (`false`) the VCM buffer.
         #[inline]
         pub fn set_vcm_power_down(mut self, pd: bool) -> Self {
-            if pd { self.0 |= 0x10 } else { self.0 &= !0x10 }
+            if pd {
+                self.0 |= 0x10
+            } else {
+                self.0 &= !0x10
+            }
             self
         }
 
@@ -359,13 +407,19 @@ pub mod registers {
     }
 
     impl Default for GeneralConfig {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for GeneralConfig {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<GeneralConfig> for u8 {
-        fn from(r: GeneralConfig) -> u8 { r.0 }
+        fn from(r: GeneralConfig) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -399,42 +453,66 @@ pub mod registers {
         pub const RESET: u8 = 0x80;
 
         /// Byte 1 of the soft reset sequence (write 0x03 to SPI_RESET).
-        pub const fn reset_byte1() -> Self { Self(0x03) }
+        pub const fn reset_byte1() -> Self {
+            Self(0x03)
+        }
         /// Byte 2 of the soft reset sequence (write 0x02 to SPI_RESET).
-        pub const fn reset_byte2() -> Self { Self(0x02) }
+        pub const fn reset_byte2() -> Self {
+            Self(0x02)
+        }
 
         /// Return a copy with the SPI_SYNC bit set to 0 (step 1 of sync).
         #[inline]
-        pub fn with_sync_low(mut self) -> Self { self.0 &= !0x80; self }
+        pub fn with_sync_low(mut self) -> Self {
+            self.0 &= !0x80;
+            self
+        }
 
         /// Return a copy with the SPI_SYNC bit set to 1 (step 2 of sync).
         #[inline]
-        pub fn with_sync_high(mut self) -> Self { self.0 |= 0x80; self }
+        pub fn with_sync_high(mut self) -> Self {
+            self.0 |= 0x80;
+            self
+        }
 
         /// Whether the SPI_SYNC bit is high.
         #[inline]
-        pub fn sync_high(self) -> bool { self.0 & 0x80 != 0 }
+        pub fn sync_high(self) -> bool {
+            self.0 & 0x80 != 0
+        }
 
         /// Whether one-shot mode is enabled (bit 4).
         #[inline]
-        pub fn one_shot_enabled(self) -> bool { self.0 & 0x10 != 0 }
+        pub fn one_shot_enabled(self) -> bool {
+            self.0 & 0x10 != 0
+        }
 
         /// Enable or disable one-shot conversion mode.
         #[inline]
         pub fn set_one_shot(mut self, en: bool) -> Self {
-            if en { self.0 |= 0x10 } else { self.0 &= !0x10 }
+            if en {
+                self.0 |= 0x10
+            } else {
+                self.0 &= !0x10
+            }
             self
         }
     }
 
     impl Default for DataControl {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for DataControl {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<DataControl> for u8 {
-        fn from(r: DataControl) -> u8 { r.0 }
+        fn from(r: DataControl) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -485,10 +563,14 @@ pub mod registers {
     }
 
     impl From<u8> for InterfaceConfig {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<InterfaceConfig> for u8 {
-        fn from(r: InterfaceConfig) -> u8 { r.0 }
+        fn from(r: InterfaceConfig) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -514,14 +596,20 @@ pub mod registers {
 
         /// Whether the BIST start bit is set.
         #[inline]
-        pub fn started(self) -> bool { self.0 & 0x01 != 0 }
+        pub fn started(self) -> bool {
+            self.0 & 0x01 != 0
+        }
     }
 
     impl From<u8> for BistControl {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<BistControl> for u8 {
-        fn from(r: BistControl) -> u8 { r.0 }
+        fn from(r: BistControl) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -543,31 +631,43 @@ pub mod registers {
         /// Set when: power-up CRC fails, background memory XOR check fails,
         /// or no external clock detected.  A reset is required to clear.
         #[inline]
-        pub fn chip_error(self) -> bool { self.0 & 0x08 != 0 }
+        pub fn chip_error(self) -> bool {
+            self.0 & 0x08 != 0
+        }
 
         /// External MCLK was **not** detected (bit 2).
         ///
         /// When set, `chip_error` is also set and all conversion data is
         /// output as zeros.
         #[inline]
-        pub fn no_clock_error(self) -> bool { self.0 & 0x04 != 0 }
+        pub fn no_clock_error(self) -> bool {
+            self.0 & 0x04 != 0
+        }
 
         /// The most recent RAM BIST passed (bit 1).
         ///
         /// `false` means the BIST has not been run or has failed.
         #[inline]
-        pub fn bist_passed(self) -> bool { self.0 & 0x02 != 0 }
+        pub fn bist_passed(self) -> bool {
+            self.0 & 0x02 != 0
+        }
 
         /// The RAM BIST is currently running (bit 0).
         #[inline]
-        pub fn bist_running(self) -> bool { self.0 & 0x01 != 0 }
+        pub fn bist_running(self) -> bool {
+            self.0 & 0x01 != 0
+        }
     }
 
     impl From<u8> for DeviceStatus {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<DeviceStatus> for u8 {
-        fn from(r: DeviceStatus) -> u8 { r.0 }
+        fn from(r: DeviceStatus) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -588,14 +688,20 @@ pub mod registers {
 
         /// Raw revision byte.
         #[inline]
-        pub fn revision(self) -> u8 { self.0 }
+        pub fn revision(self) -> u8 {
+            self.0
+        }
     }
 
     impl From<u8> for RevisionId {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<RevisionId> for u8 {
-        fn from(r: RevisionId) -> u8 { r.0 }
+        fn from(r: RevisionId) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -626,12 +732,18 @@ pub mod registers {
 
         /// Whether the universal GPIO enable bit is set (bit 7).
         #[inline]
-        pub fn ugpio_enabled(self) -> bool { self.0 & 0x80 != 0 }
+        pub fn ugpio_enabled(self) -> bool {
+            self.0 & 0x80 != 0
+        }
 
         /// Set or clear the universal GPIO enable.
         #[inline]
         pub fn set_ugpio_enable(mut self, en: bool) -> Self {
-            if en { self.0 |= 0x80 } else { self.0 &= !0x80 }
+            if en {
+                self.0 |= 0x80
+            } else {
+                self.0 &= !0x80
+            }
             self
         }
 
@@ -640,7 +752,9 @@ pub mod registers {
         /// Returns `false` (input) if `n > 4`.
         #[inline]
         pub fn is_output(self, n: u8) -> bool {
-            if n > 4 { return false; }
+            if n > 4 {
+                return false;
+            }
             self.0 & (1 << n) != 0
         }
 
@@ -648,16 +762,24 @@ pub mod registers {
         #[inline]
         pub fn set_direction(mut self, n: u8, output: bool) -> Self {
             debug_assert!(n <= 4);
-            if output { self.0 |= 1 << n } else { self.0 &= !(1 << n) }
+            if output {
+                self.0 |= 1 << n
+            } else {
+                self.0 &= !(1 << n)
+            }
             self
         }
     }
 
     impl From<u8> for GpioControl {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<GpioControl> for u8 {
-        fn from(r: GpioControl) -> u8 { r.0 }
+        fn from(r: GpioControl) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -688,16 +810,24 @@ pub mod registers {
         #[inline]
         pub fn set(mut self, n: u8, high: bool) -> Self {
             debug_assert!(n <= 4);
-            if high { self.0 |= 1 << n } else { self.0 &= !(1 << n) }
+            if high {
+                self.0 |= 1 << n
+            } else {
+                self.0 &= !(1 << n)
+            }
             self
         }
     }
 
     impl From<u8> for GpioWrite {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<GpioWrite> for u8 {
-        fn from(r: GpioWrite) -> u8 { r.0 }
+        fn from(r: GpioWrite) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -723,10 +853,14 @@ pub mod registers {
     }
 
     impl From<u8> for GpioRead {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<GpioRead> for u8 {
-        fn from(r: GpioRead) -> u8 { r.0 }
+        fn from(r: GpioRead) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -788,7 +922,11 @@ pub mod registers {
         pub fn set_pos(mut self, pair_index: u8, en: bool) -> Self {
             debug_assert!(pair_index < 4);
             let bit = 1 << (pair_index * 2);
-            if en { self.0 |= bit } else { self.0 &= !bit }
+            if en {
+                self.0 |= bit
+            } else {
+                self.0 &= !bit
+            }
             self
         }
 
@@ -797,19 +935,29 @@ pub mod registers {
         pub fn set_neg(mut self, pair_index: u8, en: bool) -> Self {
             debug_assert!(pair_index < 4);
             let bit = 1 << (pair_index * 2 + 1);
-            if en { self.0 |= bit } else { self.0 &= !bit }
+            if en {
+                self.0 |= bit
+            } else {
+                self.0 &= !bit
+            }
             self
         }
     }
 
     impl Default for PrechargeBuf {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for PrechargeBuf {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<PrechargeBuf> for u8 {
-        fn from(r: PrechargeBuf) -> u8 { r.0 }
+        fn from(r: PrechargeBuf) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -844,24 +992,38 @@ pub mod registers {
         #[inline]
         pub fn set_enabled(mut self, channel: u8, en: bool) -> Self {
             debug_assert!(channel < 8);
-            if en { self.0 |= 1 << channel } else { self.0 &= !(1 << channel) }
+            if en {
+                self.0 |= 1 << channel
+            } else {
+                self.0 &= !(1 << channel)
+            }
             self
         }
 
         /// Enable all reference precharge buffers.
         #[inline]
-        pub fn all_on(mut self) -> Self { self.0 = 0xFF; self }
+        pub fn all_on(mut self) -> Self {
+            self.0 = 0xFF;
+            self
+        }
 
         /// Disable all reference precharge buffers.
         #[inline]
-        pub fn all_off(mut self) -> Self { self.0 = 0x00; self }
+        pub fn all_off(mut self) -> Self {
+            self.0 = 0x00;
+            self
+        }
     }
 
     impl From<u8> for RefPrechargeBuf {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<RefPrechargeBuf> for u8 {
-        fn from(r: RefPrechargeBuf) -> u8 { r.0 }
+        fn from(r: RefPrechargeBuf) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -903,13 +1065,19 @@ pub mod registers {
 
         /// MSB byte (written to the _MSB register address).
         #[inline]
-        pub fn msb(self) -> u8 { ((self.0 >> 16) & 0xFF) as u8 }
+        pub fn msb(self) -> u8 {
+            ((self.0 >> 16) & 0xFF) as u8
+        }
         /// MID byte.
         #[inline]
-        pub fn mid(self) -> u8 { ((self.0 >> 8) & 0xFF) as u8 }
+        pub fn mid(self) -> u8 {
+            ((self.0 >> 8) & 0xFF) as u8
+        }
         /// LSB byte (written to the _LSB register address).
         #[inline]
-        pub fn lsb(self) -> u8 { (self.0 & 0xFF) as u8 }
+        pub fn lsb(self) -> u8 {
+            (self.0 & 0xFF) as u8
+        }
 
         /// Reconstruct from the three bytes read back from the device.
         pub fn from_bytes(msb: u8, mid: u8, lsb: u8) -> Self {
@@ -946,20 +1114,31 @@ pub mod registers {
         #[inline]
         pub fn set_enabled(mut self, channel: u8, en: bool) -> Self {
             debug_assert!(channel < 8);
-            if en { self.0 |= 1 << channel } else { self.0 &= !(1 << channel) }
+            if en {
+                self.0 |= 1 << channel
+            } else {
+                self.0 &= !(1 << channel)
+            }
             self
         }
 
         /// Enable all channels for diagnostic receive.
         #[inline]
-        pub fn all_on(mut self) -> Self { self.0 = 0xFF; self }
+        pub fn all_on(mut self) -> Self {
+            self.0 = 0xFF;
+            self
+        }
     }
 
     impl From<u8> for DiagnosticRx {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<DiagnosticRx> for u8 {
-        fn from(r: DiagnosticRx) -> u8 { r.0 }
+        fn from(r: DiagnosticRx) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -1003,10 +1182,14 @@ pub mod registers {
     }
 
     impl From<u8> for DiagnosticMux {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<DiagnosticMux> for u8 {
-        fn from(r: DiagnosticMux) -> u8 { r.0 }
+        fn from(r: DiagnosticMux) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -1043,7 +1226,9 @@ pub mod registers {
     }
 
     impl Default for ModDelayCtrl {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for ModDelayCtrl {
         fn from(v: u8) -> Self {
@@ -1052,7 +1237,9 @@ pub mod registers {
         }
     }
     impl From<ModDelayCtrl> for u8 {
-        fn from(r: ModDelayCtrl) -> u8 { r.0 }
+        fn from(r: ModDelayCtrl) -> u8 {
+            r.0
+        }
     }
 
     // -----------------------------------------------------------------------
@@ -1098,12 +1285,18 @@ pub mod registers {
     }
 
     impl Default for ChopControl {
-        fn default() -> Self { Self(Self::RESET) }
+        fn default() -> Self {
+            Self(Self::RESET)
+        }
     }
     impl From<u8> for ChopControl {
-        fn from(v: u8) -> Self { Self(v) }
+        fn from(v: u8) -> Self {
+            Self(v)
+        }
     }
     impl From<ChopControl> for u8 {
-        fn from(r: ChopControl) -> u8 { r.0 }
+        fn from(r: ChopControl) -> u8 {
+            r.0
+        }
     }
 }

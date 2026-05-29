@@ -1,18 +1,17 @@
 #![no_std]
-use embassy_stm32::{
-    exti::ExtiInput,
-    gpio::Output,
-    spi::Spi,
-};
+use embassy_stm32::{exti::ExtiInput, gpio::Output, spi::Spi};
 
-use embassy_stm32::spi::mode::Master;
+use crate::Error::BadRevision;
+use ad7768_pac::registers::registers::{
+    Cal24, ChannelModeReg, ChannelStandby, DataControl, DeviceStatus, InterfaceConfig,
+    PowerModeReg, RevisionId,
+};
+use ad7768_pac::*;
 use embassy_stm32::mode::Async;
+use embassy_stm32::spi::mode::Master;
 use embassy_stm32::spi::mode::Slave;
 use embassy_time::{Duration, Timer};
 use embedded_hal_async::spi::{ErrorType, SpiBus};
-use ad7768_pac::*;
-use ad7768_pac::registers::registers::{Cal24, ChannelModeReg, ChannelStandby, DataControl, DeviceStatus, InterfaceConfig, PowerModeReg, RevisionId};
-use crate::Error::BadRevision;
 
 #[derive(Debug, defmt::Format)]
 
@@ -29,11 +28,11 @@ pub enum Error {
     ChipError,
 }
 
-
 impl From<embassy_stm32::spi::Error> for Error {
-    fn from(e: embassy_stm32::spi::Error) -> Self { Error::Spi(e) }
+    fn from(e: embassy_stm32::spi::Error) -> Self {
+        Error::Spi(e)
+    }
 }
-
 
 // ---------------------------------------------------------------------------
 // Configuration struct
@@ -71,7 +70,6 @@ impl Default for Ad7768Config {
     }
 }
 
-
 // ---------------------------------------------------------------------------
 // Driver
 // ---------------------------------------------------------------------------
@@ -93,15 +91,13 @@ impl Default for Ad7768Config {
 /// - `data_spi` — slave mode, receives DOUT0 clocked by DCLK from the AD7768.
 ///   Wire AD7768 DCLK → STM32 SPI SCK input, AD7768 DOUT0 → STM32 SPI MISO.
 ///   The AD7768 owns the clock here so the STM32 must be slave.
-pub struct Ad7768<'d>
-{
-    ctrl_spi:   Spi<'d, Async, Master>,
-    data_spi:   Spi<'d, Async, Slave>,
-    cs:         Output<'d>,
-    rst:        Output<'d>,
-    drdy:       ExtiInput<'d, Async>,
+pub struct Ad7768<'d> {
+    ctrl_spi: Spi<'d, Async, Master>,
+    data_spi: Spi<'d, Async, Slave>,
+    cs: Output<'d>,
+    rst: Output<'d>,
+    drdy: ExtiInput<'d, Async>,
 }
-
 
 // ---------------------------------------------------------------------------
 // The SPI protocol is 16-bit frames, Mode 0 (CPOL=0, CPHA=0).
@@ -109,8 +105,7 @@ pub struct Ad7768<'d>
 // uses an "off-frame" protocol (response arrives on the next CS assertion).
 // ---------------------------------------------------------------------------
 
-impl<'d> Ad7768<'d>
-{
+impl<'d> Ad7768<'d> {
     /// Construct the driver.  Does **not** reset the device; call
     /// [`reset`](Self::reset) first.
     pub fn new(
@@ -120,9 +115,14 @@ impl<'d> Ad7768<'d>
         rst: Output<'d>,
         drdy: ExtiInput<'d, Async>,
     ) -> Self {
-        Self { ctrl_spi, data_spi, cs, rst, drdy }
+        Self {
+            ctrl_spi,
+            data_spi,
+            cs,
+            rst,
+            drdy,
+        }
     }
-
 
     // -----------------------------------------------------------------------
     // Low-level SPI helpers
@@ -133,22 +133,23 @@ impl<'d> Ad7768<'d>
     /// The AD7768 uses an *off-frame* protocol: the response to command N
     /// arrives during command N+1.  Callers that need read data must issue a
     /// second (dummy) transfer.
-    async fn transfer16(&mut self, tx: u16) -> Result<u16, Error>
-    {
+    async fn transfer16(&mut self, tx: u16) -> Result<u16, Error> {
         use embedded_hal_async::spi::SpiBus;
         let tx_bytes = tx.to_be_bytes();
         let mut rx_bytes = [0u8; 2];
 
         self.cs.set_low();
-        self.ctrl_spi.transfer(&mut rx_bytes, &tx_bytes).await.map_err(Error::Spi)?;
+        self.ctrl_spi
+            .transfer(&mut rx_bytes, &tx_bytes)
+            .await
+            .map_err(Error::Spi)?;
         self.cs.set_high();
 
         Ok(u16::from_be_bytes(rx_bytes))
     }
 
     /// Write a register (one 16-bit frame)
-    pub async fn write_reg(&mut self, addr: u8, data: u8) -> Result<(), Error>
-    {
+    pub async fn write_reg(&mut self, addr: u8, data: u8) -> Result<(), Error> {
         self.transfer16(spi_write_frame(addr, data)).await?;
         Ok(())
     }
@@ -158,8 +159,7 @@ impl<'d> Ad7768<'d>
     /// Requires **two** SPI frames (off-frame protocol):
     /// 1. Send the read command — device ignores data, queues response.
     /// 2. Send a dummy frame — device clocks out the response.
-    pub async fn read_reg(&mut self, addr: u8) -> Result<u8, Error>
-    {
+    pub async fn read_reg(&mut self, addr: u8) -> Result<u8, Error> {
         // Frame 1: read request
         self.transfer16(spi_read_frame(addr)).await?;
         // Frame 2: dummy write, collect response in low byte
@@ -169,11 +169,7 @@ impl<'d> Ad7768<'d>
     }
 
     /// Read-modify-wrie one register
-    pub async fn reg_modify<F>(
-        &mut self,
-        addr: u8,
-        f: F
-    ) -> Result<(), Error>
+    pub async fn reg_modify<F>(&mut self, addr: u8, f: F) -> Result<(), Error>
     where
         F: FnOnce(u8) -> u8,
     {
@@ -201,12 +197,13 @@ impl<'d> Ad7768<'d>
 
     /// Software reset via the SPI data control register.
     pub async fn soft_reset(&mut self) -> Result<(), Error> {
-        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte1())).await?;
-        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte2())).await?;
+        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte1()))
+            .await?;
+        self.write_reg(DataControl::ADDR, u8::from(DataControl::reset_byte2()))
+            .await?;
         Timer::after(Duration::from_micros(5)).await;
         Ok(())
     }
-
 
     /// Issue the SPI_SYNC pulse so the digital filters restart with current config
     ///
@@ -229,15 +226,22 @@ impl<'d> Ad7768<'d>
         self.write_reg(PowerModeReg::ADDR, u8::from(pm)).await?;
 
         let mode_a = ChannelModeReg::new(cfg.filter, cfg.dec_rate);
-        self.write_reg(ChannelModeReg::ADDR_A, u8::from(mode_a)).await?;
+        self.write_reg(ChannelModeReg::ADDR_A, u8::from(mode_a))
+            .await?;
 
-        let crc = if cfg.enable_crc { CrcSelect::Every4 } else { CrcSelect::Disabled };
+        let crc = if cfg.enable_crc {
+            CrcSelect::Every4
+        } else {
+            CrcSelect::Disabled
+        };
         let iface = InterfaceConfig::default()
             .set_dclk_div(cfg.dclk_div)
             .set_crc_select(crc);
-        self.write_reg(InterfaceConfig::ADDR, u8::from(iface)).await?;
+        self.write_reg(InterfaceConfig::ADDR, u8::from(iface))
+            .await?;
 
-        self.write_reg(ChannelStandby::ADDR, u8::from(cfg.standby_mask)).await?;
+        self.write_reg(ChannelStandby::ADDR, u8::from(cfg.standby_mask))
+            .await?;
 
         self.sync().await
     }
@@ -281,18 +285,20 @@ impl<'d> Ad7768<'d>
     ) -> Result<(), Error> {
         self.wait_drdy(timeout_us).await?;
 
-        let mut buf = [0u8; 32];  // 8 channels × 4 bytes, one DMA burst
+        let mut buf = [0u8; 32]; // 8 channels × 4 bytes, one DMA burst
         self.data_spi.read(&mut buf).await?;
-        for (i, slot)in out.iter_mut().enumerate() {
-            let word = u32::from_be_bytes(buf[i*4 .. i*4+4].try_into().unwrap());
+        for (i, slot) in out.iter_mut().enumerate() {
+            let word = u32::from_be_bytes(buf[i * 4..i * 4 + 4].try_into().unwrap());
             *slot = AdcFrame::from_u32(word);
-            if slot.header.chip_error { return Err(Error::ChipError); }
+            if slot.header.chip_error {
+                return Err(Error::ChipError);
+            }
         }
         Ok(())
     }
 
     async fn wait_drdy(&mut self, timeout_us: u64) -> Result<(), Error> {
-        use embassy_futures::select::{select, Either};
+        use embassy_futures::select::{Either, select};
         let timeout = Timer::after(Duration::from_micros(timeout_us));
         let drdy_fall = self.drdy.wait_for_falling_edge();
         match select(drdy_fall, timeout).await {
@@ -345,5 +351,4 @@ impl<'d> Ad7768<'d>
         self.write_reg(base + 2, value.lsb()).await?;
         Ok(())
     }
-
 }

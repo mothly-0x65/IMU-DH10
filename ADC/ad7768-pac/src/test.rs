@@ -4,8 +4,8 @@
 
 #[cfg(test)]
 mod tests {
-    use crate::*;
     use crate::registers::registers::*;
+    use crate::*;
 
     #[test]
     fn spi_frame_write() {
@@ -21,9 +21,7 @@ mod tests {
 
     #[test]
     fn channel_standby_roundtrip() {
-        let r = ChannelStandby::default()
-            .set_standby(3)
-            .set_standby(7);
+        let r = ChannelStandby::default().set_standby(3).set_standby(7);
         assert!(r.is_standby(3));
         assert!(r.is_standby(7));
         assert!(!r.is_standby(0));
@@ -81,7 +79,6 @@ mod tests {
         assert_eq!(u8::from(r), 0x02);
         r = r.set_mclk_div(MclkDiv::Div32);
         assert_eq!(u8::from(r), 0x00);
-
     }
 
     #[test]
@@ -137,8 +134,8 @@ mod tests {
     fn gpio_control_roundtrip() {
         let g = GpioControl::default()
             .set_ugpio_enable(true)
-            .set_direction(0, true)   // GPIO0 output
-            .set_direction(4, true);  // GPIO4 output
+            .set_direction(0, true) // GPIO0 output
+            .set_direction(4, true); // GPIO4 output
         assert!(g.ugpio_enabled());
         assert!(g.is_output(0));
         assert!(!g.is_output(1));
@@ -281,5 +278,3 @@ mod tests {
         assert_eq!(DclkDiv::Div1.divisor(), 1);
     }
 }
-
-

@@ -22,8 +22,141 @@
   <component name="ChangeListManager">
     <list default="true" id="edca5609-83ef-49a1-99d9-ecaf7e840c7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/ad7768-pac/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/registers.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/ad7768-pac/src/registers.rs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ADC/ad7768-pac/src/test.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/ad7768-pac/src/test.rs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ADC/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/ADC/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCU/Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCU/src/main.rs" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/src/main.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MCU/src/mpu.rs" beforeDir="false" afterPath="$PROJECT_DIR$/MCU/src/mpu.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PHY/lan8742/src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/PHY/lan8742/src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/.rustc_info.json" beforeDir="false" afterPath="$PROJECT_DIR$/target/.rustc_info.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-491490cdfb7a41c3/output-lib-ad7768" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-0c15c1b88a7a402e/dep-test-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-0c15c1b88a7a402e/dep-test-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-62100136e71c659f/dep-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-62100136e71c659f/dep-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-62100136e71c659f/output-lib-ad7768_pac" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-c1d1faa530082c8b/dep-lib-ad7768_pac" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/ad7768-pac-c1d1faa530082c8b/dep-lib-ad7768_pac" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/embassy-stm32-48a61120dc90058a/dep-lib-embassy_stm32" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/embassy-stm32-48a61120dc90058a/dep-lib-embassy_stm32" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-9582200a0183438e/dep-bin-imu-embassy-project" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-9582200a0183438e/dep-bin-imu-embassy-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-9582200a0183438e/output-bin-imu-embassy-project" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-9582200a0183438e/output-bin-imu-embassy-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-c7794f69e2c6e58f/dep-test-bin-imu-embassy-project" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/.fingerprint/imu-embassy-project-c7794f69e2c6e58f/dep-test-bin-imu-embassy-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/build/num-traits-1aa4c75ed7078382/stderr" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/build/num-traits-1aa4c75ed7078382/stderr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/imu_embassy_project-9582200a0183438e" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/imu_embassy_project-9582200a0183438e" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/libad7768-a9895ec634e8ddce.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/libad7768-a9895ec634e8ddce.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/libad7768_pac-c1d1faa530082c8b.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/libad7768_pac-c1d1faa530082c8b.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/liblan8742-b0cbac7b6e8896de.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/deps/liblan8742-b0cbac7b6e8896de.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/imu-embassy-project" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/imu-embassy-project" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/4l2o035b5urtshx4yevl5snq6.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/c46qvc7qrxwhj4ym1uehpnj17.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6-8wrzajiengxrodoobvcepzep4/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-11pqdahobvw0q/s-hiw4mzvfea-0u3xtu6.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-1nal7k4q8pkm7/s-hiw4oqmt8e-0cjxlxf-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-1nal7k4q8pkm7/s-hiw4oqmt8e-0cjxlxf.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-1nal7k4q8pkm7/s-hiw4os1uhh-0fkejr9-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-1nal7k4q8pkm7/s-hiw4os1uhh-0fkejr9.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-2b011hbhbqh9f/s-hiw4oqmt8l-151930r-3wsd2rsous8kdspum05bgzhud/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-2b011hbhbqh9f/s-hiw4oqmt8l-151930r-3wsd2rsous8kdspum05bgzhud/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-2b011hbhbqh9f/s-hiw4oqmt8l-151930r-3wsd2rsous8kdspum05bgzhud/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-2b011hbhbqh9f/s-hiw4oqmt8l-151930r-3wsd2rsous8kdspum05bgzhud/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768-2b011hbhbqh9f/s-hiw4oqmt8l-151930r.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/0agmukx1okdgof2a3054x4fwg.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/80djsecfxuyfvxxj0npyz6s0n.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/8v7c59fdi9jn876mt6sabizzj.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5-19b9zvb5x2wgworiqljyy3vnq/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-0to68e5hbmkuk/s-hiw4moif1r-19yv5g5.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4on36rc-1b2t7ui-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4on36rc-1b2t7ui.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4on6oc3-0es30ph-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4on6oc3-0es30ph.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oo45jm-0xf9t0z-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oo45jm-0xf9t0z.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4ooaq7i-1449hhc-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4ooaq7i-1449hhc.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4opcxck-0l60jff-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4opcxck-0l60jff.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4opie0r-14xo3rw-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4opie0r-14xo3rw.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oqh5gh-11kphx5-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oqh5gh-11kphx5.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oqmq9d-0soh93k-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4oqmq9d-0soh93k.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4orwcv9-1ovnnq4-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4orwcv9-1ovnnq4.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4os1u8r-10zydfl-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-22n3po2o287up/s-hiw4os1u8r-10zydfl.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on36rq-1fvmoma.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4on6oc1-0bkzhc5.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oo45jk-0sfljlb.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4ooaq7d-1w6g61e.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opcxdk-0vt7nyz.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0-working/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0-working/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0-working/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0-working/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4opii0h-193lsj0.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oqh5ge-1il2ggo-c52et9b6lenmiv4cufotdda8z/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oqh5ge-1il2ggo-c52et9b6lenmiv4cufotdda8z/metadata.rmeta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oqh5ge-1il2ggo-c52et9b6lenmiv4cufotdda8z/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oqh5ge-1il2ggo-c52et9b6lenmiv4cufotdda8z/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/ad7768_pac-3vsovq162bqma/s-hiw4oqh5ge-1il2ggo.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nelqgw-0lay8fr-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nelqgw-0lay8fr.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nercnf-004nwjj-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nercnf-004nwjj.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4newopb-0a43cjz-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4newopb-0a43cjz.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nf6p85-057f8j4-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-02gp6pqzkh0ah/s-hiw4nf6p85-057f8j4.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-14247xcown6qi/s-hiw4nelqg0-1tww4sh-cqgp9tri9z42lhu48fm6rngin/dep-graph.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-14247xcown6qi/s-hiw4nelqg0-1tww4sh-cqgp9tri9z42lhu48fm6rngin/query-cache.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-14247xcown6qi/s-hiw4nelqg0-1tww4sh-cqgp9tri9z42lhu48fm6rngin/work-products.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/imu_embassy_project-14247xcown6qi/s-hiw4nelqg0-1tww4sh.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4on6or8-1eb4f84-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4on6or8-1eb4f84.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4ooavn4-1t4thn0-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4ooavn4-1t4thn0.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4opihpj-18x70ha-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4opihpj-18x70ha.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4oqmsyg-1gxfeei-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4oqmsyg-1gxfeei.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4os1vrt-1ow3m21-working/dep-graph.part.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/incremental/lan8742-0c3i51u7jx48y/s-hiw4os1vrt-1ow3m21.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/libad7768.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/libad7768.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/libad7768_pac.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/libad7768_pac.rlib" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/liblan8742.rlib" beforeDir="false" afterPath="$PROJECT_DIR$/target/thumbv7em-none-eabihf/debug/liblan8742.rlib" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +206,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "adc",
+    "git-widget-placeholder": "adc__task",
     "junie.onboarding.icon.badge.shown": "true",
     "last_directory_selection": "/home/eric/DH10/imu-board/ADC",
     "last_opened_file_path": "/home/eric/DH10/imu-board",
@@ -85,7 +218,7 @@
     "org.rust.cargo.project.model.PROJECT_DISCOVERY": "true",
     "org.rust.cargo.project.model.impl.CargoExternalSystemProjectAware.subscribe.first.balloon": "",
     "org.rust.first.attach.projects": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -102,6 +235,9 @@
       <recent name="$PROJECT_DIR$/ADC/src" />
       <recent name="$PROJECT_DIR$/ADC/ad7768-pac" />
     </key>
+  </component>
+  <component name="RsExternalLinterProjectSettings">
+    <option name="additionalArguments" value="--all-targets=false" />
   </component>
   <component name="RunManager" selected="Cargo.Test test::tests::power_mode_reg_eco_pairing">
     <configuration name="Test test::tests::channel_mode_reg_encode_decode" type="CargoCommandRunConfiguration" factoryName="Cargo Command" temporary="true">
@@ -306,6 +442,7 @@
       <workItem from="1779620651156" duration="1076000" />
       <workItem from="1779621857597" duration="3986000" />
       <workItem from="1779654463187" duration="13789000" />
+      <workItem from="1780039279717" duration="7769000" />
     </task>
     <servers />
   </component>
